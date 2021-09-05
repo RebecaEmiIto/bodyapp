@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pixel_perfect/pixel_perfect.dart';
 
-import 'login/login.dart';
+import 'register/register.dart';
+//import 'login/login.dart';
 // import 'home/home.dart';
 
 void main() {
@@ -17,10 +18,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.teal,
       ),
       home: PixelPerfect(
-        assetPath: 'design/screens/login.png',
+        assetPath: 'design/screens/sign up.png',
         scale: .9,
         initOpacity: 0.5,
-        child: LoginScreen(),
+        child: RegisterScreen(),
       ),
     );
   }
