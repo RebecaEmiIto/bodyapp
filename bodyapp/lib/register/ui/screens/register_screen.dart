@@ -10,7 +10,7 @@ class RegisterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var h = MediaQuery.of(context).size.height;
+    
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -29,7 +29,41 @@ class RegisterScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: RegisterFormWidgetState(), 
+      body: RegisterFormWidgetState(),
+      bottomNavigationBar: BottomNavigationBar(
+        selectedFontSize: 14,
+        selectedItemColor: Colors.black,
+
+        unselectedFontSize: 14,
+        unselectedItemColor: Colors.black,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.facebook,
+              size: 32.0,
+              color: Colors.blue,
+            ),
+            label: 'FaceBook',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.facebook,
+              size: 32.0,
+              color: Colors.cyan,                
+            ),
+            label: 'Twitter',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.facebook,
+              size: 32.0,
+              color: Colors.red,
+            ),
+            label: 'Google',
+          ),
+        ],
+        onTap: null,
+      ),  
     );
   }
 }
@@ -38,14 +72,29 @@ class RegisterFormWidgetState extends StatelessWidget {
   const RegisterFormWidgetState({ Key? key }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-
+    
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
+      //crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         const Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: 52,
-            vertical: 10,
+            horizontal: 120,
+            vertical: 20,
+          ),
+          child: CircleAvatar(
+            child: const Icon(
+              Icons.camera,
+              color: Colors.white,
+              size: 15,
+            ),
+            radius: 40, 
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: 52/320*MediaQuery.of(context).size.width,
+            vertical: 10/568*MediaQuery.of(context).size.height,
           ),
           child: TextField(
             decoration: InputDecoration(
@@ -62,8 +111,8 @@ class RegisterFormWidgetState extends StatelessWidget {
         ),
         Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: 52,
-            vertical: 10,
+            horizontal: 52/320*MediaQuery.of(context).size.width,
+            vertical: 10/568*MediaQuery.of(context).size.height,
           ),
           child: TextField(
             decoration: InputDecoration(
@@ -80,8 +129,8 @@ class RegisterFormWidgetState extends StatelessWidget {
         ),
         Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: 52,
-            vertical: 10,
+            horizontal: 52/320*MediaQuery.of(context).size.width,
+            vertical: 10/568*MediaQuery.of(context).size.height,
           ),
           child: TextField(
             obscureText: true,
@@ -99,8 +148,8 @@ class RegisterFormWidgetState extends StatelessWidget {
         ),
         Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: 52,
-            vertical: 10,
+            horizontal: 52/320*MediaQuery.of(context).size.width,
+            vertical: 10/568*MediaQuery.of(context).size.height,
           ),
           child: TextField(
             obscureText: true,
@@ -118,30 +167,30 @@ class RegisterFormWidgetState extends StatelessWidget {
         ),
         Padding(
           padding: EdgeInsets.symmetric(
-              horizontal: 52,
-              vertical: 10,
+              horizontal: 52/320*MediaQuery.of(context).size.width,
+              vertical: 10/568*MediaQuery.of(context).size.height,
             ),
           child: RaisedButton(
             padding: EdgeInsets.symmetric(
-              horizontal: 46,
-              vertical: 12,
+              horizontal: 46/320*MediaQuery.of(context).size.width,
+              vertical: 12/568*MediaQuery.of(context).size.height,
             ),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10.0),
             ),
             onPressed: () => {},
+            color: Colors.teal,
             child: Text(
               'Criar Conta',
               style: GoogleFonts.rokkitt(
-                fontSize: (25*568)/MediaQuery.of(context).size.height,
+                fontSize: 28/568*MediaQuery.of(context).size.height,
                 fontWeight: FontWeight.w400,
-                //color: Color(0xFFFFFF),
+                color: Colors.white,
               ),
             ),
           ),
         ),
-        Row(
-          
+        Row( 
         ),
       ],
     );
